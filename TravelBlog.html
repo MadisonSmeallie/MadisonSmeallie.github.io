@@ -3,11 +3,39 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width", initial-scale-1>
-
-        style {
-
-        }
+        <title>Travel Blog</title>
+        <link rel="sytlesheet" href="styles.css">
+        <style>
+            article {
+                background-color: #FFECB3;
+                font-size:16px;
+                color: #333;
+            }
+            article.featured {
+                background-color: #FFD54F;
+                font-weight: bold;
+                border: 2px solid #FFA000;
+            }
+            article.featured:hover {
+                background-color: #FFB300;
+            }
+}
+            article p {
+                line-height: 1.5;
+                font-style: italic;
+            }
+        </style>
     </head>
 
+    <body>
+        <article>
+            <h1>Regular article</h1>
+            <p>This is a normal article without any special styling.</p>
+        </article>
+        <article class="featured">
+            <h2>Featured Article - Hover over me!</h2>
+            <p>This is a featured article with a bold look, border, and color change.</p>
+        </article>
+    </body>
 
 </html>
