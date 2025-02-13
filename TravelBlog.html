@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width", initial-scale-1>
         <title>Travel Blog</title>
-        <link rel="sytlesheet" href="styles.css">
+        <link rel="stylesheet" href="styles.css">
         <style>
             article {
                 background-color: #FFECB3;
@@ -23,6 +23,22 @@
                 line-height: 1.5;
                 font-style: italic;
             }
+            h3#smiley {
+                color: red;
+                font-size: 100pt;
+                position: absolute;
+                animation-name: move;
+                animation-duration: 6s;
+                animation-iteration-count: 5;
+            }
+            @keyframes move {
+            0%   { color:orange; left:0; }
+            25%  { color:yellow; left:25%; }
+            50%  { color:green; left:50%; }
+            75% { color:blue; left: 75%;}
+            100% { color:purple; left:100%;}
+            0% { color: red; left:0; }
+            } 
         </style>
     </head>
 
@@ -35,6 +51,7 @@
             <h2>Featured Article - Hover over me!</h2>
             <p>This is a featured article with a bold look, border, and color change.</p>
         </article>
+        <h3 id="smiley">&#9786;</h3>
     </body>
 
 </html>
