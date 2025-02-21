@@ -45,6 +45,35 @@
         height: 10vh; 
         }
 
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .card {
+            width: calc(33.333% - 20px); /* 3 columns */
+            background: white;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .thumbnail {
+            background: #6c757d;
+            height: 150px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .card-body {
+        padding: 15px;
+    }
+
     </style>
 
     <body>
@@ -64,6 +93,21 @@
             <img src="Me.JPEG" alt="A photo of Madison Smeallie" class="profile-img">
         </div>
         <p style="text-align: center;">Hi, I'm Madison. I'm a senior Computer Science major. Welcome to my website!</p>
+
+        <div class="grid"></div>
+            <div class="card">
+                <div class="thumbnail">Thumbnail</div>
+                <div class="body">Sample Text</p>
+                </div>
+            </div>
+
+        <div class="grid"></div>
+            <div class="card">
+                <div class="thumbnail">Thumbnail</div>
+                <div class="body">
+                    <p>Sample Text</p>
+                </div>
+            </div>
     </main>
 
 </html>

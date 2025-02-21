@@ -28,11 +28,38 @@
             background-color: #c178d7;
         }
 
-        .pfp {
-        display: flex;
-        justify-content: center; 
-        align-items: center; 
-        height: 10vh; 
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .card {
+            width: calc(33.333% - 20px); /* 3 columns */
+            background: white;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .thumbnail {
+            background: #6c757d;
+            height: 150px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; 
+        }
+
+        .card-body {
+        padding: 15px;
+        }
+
+        .dog {
+        max-width: 100%; 
+        max-height: 500px;
+        height: auto;
         }
 
     </style>
@@ -43,13 +70,15 @@
             <li><a href="Blog.html">Blog</a></li>
             <li><a class="active" href="Pets.html">Pets</a></li>
           </ul>
+          <p style="text-align: center;"><strong>This is a page dedicated to my favorite pets!</strong></p>
     </body>
-
-    <main class="home-content"></main>
-        <div class="pfp">
-            <img src="JasAndChase.jpeg" alt="A photo of two white/gray dogs" class="profile-img">
-        </div>
-        <p style="text-align: center;">This is a page dedicated to my favorite pets!</p>
-    </main>
     
+    <main>
+        <div class="thumbnail">
+            <img src="JasAndChase.jpeg" alt="A photo of two white/gray dogs" class="dog">
+        </div>
+        <div class="thumbnail">
+            <img src="Izzy.jpeg" alt="A photo of a small spotted white and tan dog" class="dog>
+        </div>
+    </main>
 </html>
