@@ -5,9 +5,51 @@
         <meta name="viewport" content="width=device-width", initial-scale-1>
     </head>
 
-    <body>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 10;
+            padding: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        li {
+            float: left;
+        }
 
+        a {
+            display: block;
+            padding: 20px;
+            background-color: #d4ade1;
+        }
+
+        .active {
+            background-color: #c178d7;
+        }
+
+        .pfp {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        height: 10vh; 
+        }
+
+    </style>
+    <body>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="AboutMe.html">About Me</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a class="active" href="Pets.html">Pets</a></li>
+          </ul>
     </body>
 
-
+    <main class="home-content"></main>
+        <div class="pfp">
+            <img src="JasAndChase.jpeg" alt="A photo of two white/gray dogs" class="profile-img">
+        </div>
+        <p style="text-align: center;">This is a page dedicated to my favorite pets!</p>
+    </main>
+    
 </html>

@@ -6,17 +6,64 @@
     </head>
     
     <style>
+        h1 {
+            font-weight: bold;
+            text-align: center;
+        }
 
+        ul {
+            list-style-type: none;
+            margin: 10;
+            padding: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        li {
+            float: left;
+        }
+
+        a {
+            display: block;
+            padding: 20px;
+            background-color: #d4ade1;
+        }
+
+        .profile-img {
+            text-align: center;
+        }
+
+        .active {
+            background-color: #c178d7;
+        }
+
+        .pfp {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        height: 10vh; 
+        }
 
     </style>
 
     <body>
         <ul>
-            <li><a href="p1Homepage.html">Home</a></li>
+            <li><a class="active" href="index.html">Home</a></li>
             <li><a href="AboutMe.html">About Me</a></li>
             <li><a href="Blog.html">Blog</a></li>
             <li><a href="Pets.html">Pets</a></li>
           </ul>
+
+          <h1 class="header">Hi, I'm Madison!</h1>
+          
     </body>
+
+    <main class="home-content">
+        <div class="pfp">
+            <img src="Me.JPEG" alt="A photo of Madison Smeallie" class="profile-img">
+        </div>
+        <p style="text-align: center;">Hi, I'm Madison. I'm a senior Computer Science major. Welcome to my website!</p>
+    </main>
 
 </html>
