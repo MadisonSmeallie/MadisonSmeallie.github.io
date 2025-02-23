@@ -3,6 +3,91 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width", initial-scale-1>
+    
+        <style>
+
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+
+            main {
+                display: flex;
+                flex-direction: column;
+            }
+
+            article {
+                background: lightgray;
+                height: 20vh;
+                flex-grow: 1;
+                padding: 1em;
+            }
+
+            main nav {
+                background: beige;
+                padding: 1em;
+            }
+
+            main aside {
+                background: beige;
+                padding: 1em;
+            }
+
+            header {
+                background: yellowgreen;
+                height: 10vh;
+                padding: 1em;
+            }
+
+            footer {
+                background: yellowgreen;
+                height: 10vh;
+                padding: 1em;
+            }
+
+            @media (min-width: 576px) {
+                main {
+                    flex-direction: row;
+                }
+
+                main nav {
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    flex-basis: 20vw;
+                }
+
+                main aside {
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    flex-basis: 20vw;
+                }
+            }
+
+        </style>
     </head>
+
+<header>
+    <p>Header</p>
+</header>
+
+<main>
+    <nav>
+        <p>Nav</p>
+    </nav>
+
+    <article>
+        <p>Article</p>
+    </article>
+
+    <aside>
+        <p>Aside</p>
+    </aside>
+
+</main>
+
+<footer>
+    <p>Footer</p>
+</footer>
 
 </html>
