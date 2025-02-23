@@ -6,30 +6,41 @@
         
     </head>
     <style>
-        ul {
-            list-style-type: none;
-            margin: 10;
-            padding: 0;
-            position: fixed;
-            top: 0;
+        nav {
+            display: flex;
+            background-color: #d4ade1;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        nav .logo {
+            color: white;
             width: 100%;
         }
-        li {
-            float: left;
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0;
+            margin: 0 15px;
+            color: white;
         }
 
-        a {
-            display: block;
-            padding: 20px;
-            background-color: #d4ade1;
+        nav ul li {
+            margin: 0 15px;
         }
 
-        header {
-            text-align: center;
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
         }
 
         .active {
-            background-color:#c178d7;
+            background-color: #c178d7;
         }
 
         .grid {
@@ -58,29 +69,25 @@
         }
 
         .card-body {
-        padding: 15px;
-    }
-
+            padding: 15px;
+        }
     </style>
-    <body>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a class="active" href="AboutMe.html">About Me</a></li>
-            <li><a href="Blog.html">Blog</a></li>
-            <li><a href="Pets.html">Pets</a></li>
+
+     <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="AboutMe.html">About Me</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Pets.html">Pets</a></li>
           </ul>
+    </header>
 
-        <p></p>
-
-        <header><strong>About Me</strong></header>
-    </body>
-        <main>
+    <body>
         <div class="grid"></div>
             <div class="card">
                 <div class="thumbnail">Thumbnail</div>
-                <div class="body">
-                    <p>Sample Text</p>
-                </div>
+                <div class="body"><p>Sample Text</p></div>
             </div>
-        </main>
+    </body>
 </html>

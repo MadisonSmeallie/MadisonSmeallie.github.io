@@ -5,22 +5,37 @@
         <meta name="viewport" content="width=device-width, initial-scale-1.0">
     </head>
     <style>
-        ul {
-            list-style-type: none;
-            margin: 10;
-            padding: 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
-        li {
-            float: left;
+        nav {
+            display: flex;
+            background-color: #d4ade1;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
         }
 
-        a {
-            display: block;
-            padding: 20px;
-            background-color: #d4ade1;
+        nav .logo {
+            color: white;
+            width: 100%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0;
+            margin: 0 15px;
+            color: white;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
         }
 
         .active {
@@ -53,31 +68,27 @@
         }
 
         .card-body {
-        padding: 15px;
+            padding: 15px;
         }
 
     </style>
 
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AboutMe.html">About Me</a></li>
+                <li><a class="active" href="Blog.html">Blog</a></li>
+                <li><a href="Pets.html">Pets</a></li>
+            </ul>
+          </nav>
+    </header>
+
     <body>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="AboutMe.html">About Me</a></li>
-            <li><a class="active" href="Blog.html">Blog</a></li>
-            <li><a href="Pets.html">Pets</a></li>
-          </ul>
-          <p style="text-align: center;"><strong>My Blog</strong></p>
-    </body>
-
-    <main>
-        <p></p>
-    
-    <div class="grid"></div>
-        <div class="card">
-            <div class="thumbnail">Thumbnail</div>
-            <div class="body">
-                <p>Sample Text</p>
+        <div class="grid"></div>
+            <div class="card">
+                <div class="thumbnail">Thumbnail</div>
+                <div class="body"><p>Sample Text</p></div>
             </div>
-        </div>
-    </main>
-
+    </body>
 </html>
