@@ -5,9 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Navigation</title>
 <style>
+    nav {
+        display: flex;
+        background-color: #333;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+    }
 
+    nav .logo {
+        color: white;
+        width: 100%;
+    }
+
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0 15px;
+        color: white;
+    }
+
+    nav ul li {
+        margin: 0 15px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+    }
+
+    nav ul li a:hover {
+        color: plum;
+    }
+    
+    @media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+    }
+
+    nav .logo {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    nav li {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+}
 </style>
 
 </head>
+
+<header>
+
+        <nav>
+            <div class="logo" style="font-size: 24px;">Logo</div>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+
+    </header>
+
 
 </html>
