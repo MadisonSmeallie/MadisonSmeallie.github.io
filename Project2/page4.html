@@ -13,17 +13,59 @@
 
         <blockquote>"I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?”</blockquote>
 
-        <form type="get" action="page5.html">
+        <form action="page5.html" method="get" id="riddleForm">
 
-            <label>Your answer: </label>
-            <input type="text" id="playerAnswer" placeholder="Enter your answer here"> 
-
-            <input type="submit" id="submitButton" value="Submit Answer">
+            <label for="playerAnswer">Your answer: </label>
+            <input type="text" id="playerAnswer" name="playerAnswer" placeholder="Answer: Echo"> 
+            <button type="submit" id="submitButton" value="Submit Answer">Submit Answer</button>
+            <p>Think carefully, for the correct answer will grant you passage...</p>
         </form>
 
     </section>
 
-    <script></script>
+    <script>
+        const playerAnswer = document.getElementById("playerAnswer"); 
+        const submitButton = document.getElementById("submitButton");
+        const riddleForm = document.getElementById("riddleFrom");
+
+        submitButton.style.backgroundColor = "red";
+        submitButton.style.color = "white";
+
+        function verifyUserAnswer (correctAnswer, answerInput) {
+            if (answerInput.value == correctAnswer) {
+                submitButton.style.backgroundColor = "green";
+                submitButton.style.color = "white";
+                return true;
+            }
+            else {
+                submitButton.style.backgroundColor = "red";
+                submitButton.style.color = "white";
+                return false;
+            }
+        }
+
+        playerAnswer.addEventListener("input", function() {
+            const correctAnswer = "Echo";
+            verifyUserAnswer(correctAnswer, playerAnswer)
+        });
+
+        riddleForm.addEventListener("submit", function(event) {
+            const correctAnswer = "Echo";
+            if (!veryifyAnswer(correctAnswer, playerAnswer)) {
+                event.preventDefault();
+                alert("The answer you entered is incorrect. Please try again.");
+            }
+        })
+
+        submitButton.addEventListener("submit", function(event) {
+            const correctAnswer = "Echo";
+            if (!veryifyAnswer(correctAnswer, playerAnswer)) {
+                event.preventDefault();
+                alert("The answer you entered is incorrect. Please try again.");
+            }
+        })
+
+    </script>
 
 </body>
 </html>
