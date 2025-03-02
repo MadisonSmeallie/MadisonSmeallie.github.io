@@ -33,10 +33,9 @@
         const pathForm = document.getElementById("pathForm");
 
         pathChoice.addEventListener('change', function() {
-            let selectedPath = pathChoice.value;
+            let chosenPath = pathChoice.value;
 
-            // Change background color based on selection
-            switch(selectedPath) {
+            switch(chosenPath) {
                 case "Stength":
                     document.body.style.backgroundColor = "red";
                     break;
@@ -50,13 +49,13 @@
                     document.body.style.backgroundColor = "white"; 
             }
 
-            if (selectedPath === "Stealth") {
+            if (chosenPath === "Stealth") {
                 pathForm.action = "page5b.html";
             } else {
                 pathForm.action = "page6.html";
             }
         });
     </script>
-    
+
 </body>
 </html>

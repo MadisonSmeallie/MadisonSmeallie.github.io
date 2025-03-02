@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Quest for the Crystal of Wisdom</title>
+    <title>The Final Showdown</title>
     <link rel="stylesheet" href="p2styles.css">
 </head>
+
 <body>
     <section class="container">
-       
+        <h1>The Final Showdown</h1>
+        <p>After a long journey filled with trials and challenges, you finally stand before Malakar's lair. The dark
+            sorcerer awaits, the Crystal of Wisdom in his grasp. It's time to make your move.</p>
+
+        <form action="page7.html" method="get"></form>
+        <fieldset>
+            <legend>How will you confront Malakar?</legend>
+            <label for="wiseChoice">Choose wisely: </label>
+            <select id="wiseChoice" name="wiseChoice" required>
+                <option value="">--Please choose an option--</option>
+                <option value="strength">Path of Strength</option>
+                <option value="magic">Path of Magic</option>
+                <option value="stealth">Path of Stealth</option>
+            </select>
+            
+        </fieldset>
+
+        <fieldset>
+            <legend>"Character Information"</legend>
+            <label for="character">The Brave</label>
+
+
+            <button type="submit" id="faceMalakar" value="faceMalakar">Face Malakar</button>
+            <p>Your choice will determine the fate of the kingdom. Choose wisely...</p>
+
+        </fieldset>
+
+        </form>
+
+        <p>Your choice here will determine the fate of the kingdom. Choose wisely.</p>
     </section>
 </body>
+
 </html>
