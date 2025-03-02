@@ -8,7 +8,55 @@
 </head>
 <body>
     <section class="container">
-        <p>Test</p>
+        <h1>The Journey Continues</h1>
+        <p>With the guardian's riddle behind you, the path forward splits into three. Each route is known to favor certain traits: strength, wisdom, or stealth. Choose your path wisely, as it will influence the challenges you face ahead.</p>
+        
+        <form action="page6.html" method="get" id="pathForm">
+
+            <label for="pathChoice">Choose your path: </label>
+            <select id="pathChoice" name="pathChoice" required>
+                <option value="">--Please choose a path--</option>
+                <option value="strength">Path of Strength: </option>
+                <option value="magic">Path of Magic: </option>
+                <option value="stealth">Path of Stealth: </option>
+            </select>
+            <button type="submit" id="continueButton" value="Continue your journey">Continue your journey</button>
+            <p>Think carefully, for the correct answer will grant you passage...</p>
+        </form>
+
+        <p>Your choice will not only test your abilities but also reveal deeper truths about your character.</p>
     </section>
+
+    <script>
+
+        const pathChoice = document.getElementById("pathChoice");
+        const pathForm = document.getElementById("pathForm");
+
+        pathChoice.addEventListener('change', function() {
+            let selectedPath = pathChoice.value;
+
+            // Change background color based on selection
+            switch(selectedPath) {
+                case "Stength":
+                    document.body.style.backgroundColor = "red";
+                    break;
+                case "Magic":
+                    document.body.style.backgroundColor = "purple";
+                    break;
+                case "Stealth":
+                    document.body.style.backgroundColor = "grey";
+                    break;
+                default:
+                    document.body.style.backgroundColor = "white"; 
+            }
+
+            if (selectedPath === "Stealth") {
+                pathForm.action = "page5b.html";
+            } else {
+                pathForm.action = "page6.html";
+            }
+        });
+    </script>
+    
 </body>
 </html>
