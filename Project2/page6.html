@@ -14,31 +14,68 @@
         <p>After a long journey filled with trials and challenges, you finally stand before Malakar's lair. The dark
             sorcerer awaits, the Crystal of Wisdom in his grasp. It's time to make your move.</p>
 
-        <form action="page7.html" method="get"></form>
-        <fieldset>
-            <legend>How will you confront Malakar?</legend>
-            <label for="wiseChoice">Choose wisely: </label>
-            <select id="wiseChoice" name="wiseChoice" required>
-                <option value="">--Please choose an option--</option>
-                <option value="strength">Path of Strength</option>
-                <option value="magic">Path of Magic</option>
-                <option value="stealth">Path of Stealth</option>
-            </select>
-            
-        </fieldset>
+        <form action="page7.html" method="get">
+            <fieldset>
+                <legend>How will you confront Malakar?</legend>
+                <label for="wiseChoice">Choose wisely: </label>
+                <select id="wiseChoice" name="wiseChoice" required>
+                    <option value="">--Please choose an option--</option>
+                    <option value="strength">Path of Strength</option>
+                    <option value="magic">Path of Magic</option>
+                    <option value="stealth">Path of Stealth</option>
+                </select>
 
-        <fieldset>
-            <legend>"Character Information"</legend>
-            <label for="character">The Brave</label>
+            </fieldset>
 
+            <fieldset>
+                <legend>Character Information</legend>
 
-            <button type="submit" id="faceMalakar" value="faceMalakar">Face Malakar</button>
-            <p>Your choice will determine the fate of the kingdom. Choose wisely...</p>
+                <fieldset>
+                    <legend>The Brave</legend>
+                    <div>
+                        <label for="theBrave">Your name: </label>
+                        <input type="text" id="theBrave" name="theBrave">
+                    </div>
+                </fieldset>
 
-        </fieldset>
+                <fieldset>
+                    <legend>Select your weapon: </legend>
+
+                    <div>
+                        <input type="radio" id="sword" name="weapon">
+                        <label for="sword">Sword</label>
+
+                        <input type="radio" id="bow" name="weapon">
+                        <label for="bow">Bow</label>
+
+                        <input type="radio" id="staff" name="weapon">
+                        <label for="staff">Staff</label>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Select your armor: </legend>
+
+                    <input type="checkbox" id="plate" name="armor" unchecked>
+                    <label for="plate">Plate armor</label>
+
+                    <input type="checkbox" id="leather" name="armor" unchecked>
+                    <label for="leather">Leather armor</label>
+
+                    <input type="checkbox" id="cloak" name="armor" unchecked>
+                    <label for="cloak">Invisability cloak</label>
+
+                </fieldset>
+
+                <p>Leave a message for Malakar: </p>
+                <input type="text" id="message" name="message" size="70">
+
+            </fieldset>
 
         </form>
 
+        <button type="submit" id="faceMalakar" value="faceMalakar">Face Malakar</button>
         <p>Your choice here will determine the fate of the kingdom. Choose wisely.</p>
     </section>
 </body>
