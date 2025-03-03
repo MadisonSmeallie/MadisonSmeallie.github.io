@@ -17,21 +17,42 @@
         <!-- Actions -->
         <div onclick="selectAction('hide')" class="stealth-option">Hide in the shadows</div>
         <div onclick="selectAction('run')" class="stealth-option">Run quickly to the next cover</div>
-        <div onclick="..." class="stealth-option">Create a distraction</div>
-        <div onclick="..." class="stealth-option">Wait for the right moment</div>
+        <div onclick="selectAction('distract')" class="stealth-option">Create a distraction</div>
+        <div onclick="selectAction('wait')" class="stealth-option">Wait for the right moment</div>
         <!-- Buttons -->
         <button onclick="checkSequence()">Check Sequence</button>
         <button onclick="reset()">Reset!</button>
         <script>
             const correctSequence = ['hide', 'wait', 'distract'];
-            
-            function checkSequence() {
+            let playerAnswer = [];
 
-            }
+            function selectAction(action) {
+                playerAnswer.push(action);
+                if (playerAnswer.length <= correctSequence.length) {
+                    element.style.backgroundColor = "grey";
+                }
 
-            function reset() {
-                
-            }
+                function checkSequence() {
+
+                    if (correctSequence = playerAnswer) {
+                        alert("Congratulations! You navigated the path succesfully.");
+                        window.location.href = "page6.html";
+                    }
+                    else {
+                        alert("Sorry! Incorrect sequence entered. Please try again.");
+                        reset();
+                    }
+                }
+
+                function reset() {
+                    const divs = document.querySelectorAll('.stealth-option');
+
+                    divs.forEach(div => {
+                        div.style.backgroundColor = "";
+                    });
+
+                    playerAnswer = [];
+                }
 
         </script>
     </section>
