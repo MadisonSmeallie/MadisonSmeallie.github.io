@@ -16,9 +16,9 @@
             <label for="pathChoice">Choose your path: </label>
             <select id="pathChoice" name="pathChoice" required>
                 <option value="">--Please choose a path--</option>
-                <option value="strength">Path of Strength: Charge into battle with unwavering force to vanquish your foes.</option>
-                <option value="magic">Path of Magic: Harness the arcane forces of wisdom and spellcraft, bending reality to your will with intelligence and mystical prowess.</option>
-                <option value="stealth">Path of Stealth: Move like a shadow, using cunning, speed, and deception to outmaneuver enemies and strike when they least expect it.</option>
+                <option value="Strength">Path of Strength: Charge into battle with unwavering force to vanquish your foes.</option>
+                <option value="Magic">Path of Magic: Harness the arcane forces of wisdom and spellcraft, bending reality to your will with intelligence and mystical prowess.</option>
+                <option value="Stealth">Path of Stealth: Move like a shadow, using cunning, speed, and deception to outmaneuver enemies and strike when they least expect it.</option>
             </select>
             <button type="submit" id="continueButton" value="Continue your journey">Continue your journey</button>
             <p>Think carefully, for the correct answer will grant you passage...</p>
@@ -31,12 +31,13 @@
 
         const pathChoice = document.getElementById("pathChoice");
         const pathForm = document.getElementById("pathForm");
+        const continueButton = document.getElementById("continueButton");
 
-        pathChoice.addEventListener('change', function() {
+        pathChoice.addEventListener("change", function() {
             let chosenPath = pathChoice.value;
 
             switch(chosenPath) {
-                case "Stength":
+                case "Strength":
                     document.body.style.backgroundColor = "red";
                     break;
                 case "Magic":
