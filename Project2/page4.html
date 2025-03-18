@@ -57,7 +57,7 @@
             }
         })
 
-        submitButton.addEventListener("submit", function(event) {
+        submitButton.addEventListener("click", function(event) {
             const correctAnswer = "Echo";
             if (!veryifyAnswer(correctAnswer, playerAnswer)) {
                 event.preventDefault();
