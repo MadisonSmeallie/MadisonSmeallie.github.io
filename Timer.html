@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <p id = "counter">00</p>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+
+    let timer = document.getElementById("counter");
+    let start = document.getElementById("start");
+    let stopCount = document.getElementById("stop");
+    let count = 0;
+    let timerId;
+
+    function startTimer() {
+        if () {
+        timerId = setInterval(incrementNum, 1000);
+        }
+    }
+
+   function incrementNum() {
+        count++;
+        timer.textContent = count;
+   }
+
+   function stopTimer() {
+        clearInterval(timerId);
+   }
+   
+    start.addEventListener("click", startTimer);
+    stopCount.addEventListener("click", stopTimer)
+
+</script>
+
+</html>
