@@ -35,7 +35,7 @@
         <div>
             <label for="frequency">Frequency:</label>
             <select id="frequency" name="frequency" required>
-                <option value="">Select Frequency</option>
+                <option>Select Frequency</option>
                 <option value="one-time">One-Time</option>
                 <option value="monthly">Monthly</option>
                 <option value="bi-weekly">Bi-Weekly</option>
@@ -46,6 +46,75 @@
     
         <button type="submit">Submit</button>
     </form>
-
 </body>
+
+<script>
+    
+    const form = document.getElementById("incomeForm");
+    const sourceNameInput = document.getElementById("incomeSourceName");
+    const amountInput = document.getElementById("amount");
+    const frequencyInput = document.getElementById("frequency");
+
+    const sourceNameError = document.getElementById("sourceNameError");
+    const amountError = document.getElementById("amountError");
+    const frequencyError = document.getElementById("frequencyError");
+
+    function minSourceName() {
+        const sourceName = sourceNameInput.value.trim();
+        if (sourceName.length < 3) {
+            sourceNameError.textContent = "Source Name must be at least 3 characters long.";
+            return false;
+        } else {
+            sourceNameError.textContent = "";
+            return true;
+        }
+    }
+
+    function amount() {
+        let amount = parseFloat(amountInput.value.trim());
+
+        if (isNaN(amount) || amount <= 0) {
+            amountError.textContent = "Amount must be a number greater than 0.";
+            return false;
+        } else {
+            amount = amount.toFixed(2);  
+            amountInput.value = amount;
+            amountError.textContent = "";
+            return true;
+        }
+    }
+
+    function frequencyOptions() {
+        const frequency = frequencyInput.value;
+        if (!frequency) {
+            frequencyError.textContent = "Please select a frequency.";
+            return false;
+        } else {
+            frequencyError.textContent = "";
+            return true;
+        }
+    }
+
+    amountInput.addEventListener("blur", amount);
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); 
+
+        const isSourceNameValid = minSourceName();
+        const isAmountValid = amount();
+        const isFrequencyValid = frequencyOptions();
+
+        if (isSourceNameValid && isAmountValid && isFrequencyValid) {
+            const formData = {
+                sourceName: sourceNameInput.value.trim(),
+                amount: amountInput.value.trim(),
+                frequency: frequencyInput.value,
+            };
+            console.log("Form submitted successfully:", formData);
+        } else {
+            console.log("Please correct the errors before submitting.");
+        }
+    });
+</script>
+
 </html>
