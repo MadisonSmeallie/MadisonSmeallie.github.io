@@ -20,22 +20,22 @@
     <h2>Add Income</h2>
 
     <form id="incomeForm">
-        <div>
-            <label for="incomeSourceName">Income Source Name:</label>
-            <input type="text" id="incomeSourceName" name="incomeSourceName" required>
-            <div id="sourceNameError" class="error"></div>
+        <div class="mb-3">
+            <label for="incomeSourceName" class="form-label">Income Source Name:</label>
+            <input type="text" id="incomeSourceName" class="form-control" aria-describedby="incomeSourceName" required>
+            <div id="sourceNameError" class="form-text">Source Name should have a minimum length of 3</div>
         </div>
     
         <div>
-            <label for="amount">Amount:</label>
-            <input type="text" id="amount" name="amount" required>
-            <div id="amountError" class="error"></div>
+            <label for="amount" class="form-label">Amount:</label>
+            <input type="text" id="amount" class="form-control" aria-describedby="amount" required>
+            <div id="amountError" class="form-text">Amount should be more than 0</div>
         </div>
     
         <div>
             <label for="frequency">Frequency:</label>
-            <select id="frequency" name="frequency" required>
-                <option>Select Frequency</option>
+            <select id="frequency" aria-describedby="frequency" required>
+                <option></option>
                 <option value="one-time">One-Time</option>
                 <option value="monthly">Monthly</option>
                 <option value="bi-weekly">Bi-Weekly</option>
