@@ -46,6 +46,45 @@
         </form>
     </div>
 
+    <script>
+        document.getElementById("checkPaymentForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let checkName = document.getElementById("checkName").value;
+            let checkDate = document.getElementById("checkDate").value;
+            let checkAmount = document.getElementById("checkAmount").value;
+            let bankName = document.getElementById("bankName").value;
+            let accountNumber = document.getElementById("accountNumber").value;
+            let errorMessage = document.getElementById("errorMessage");
+
+            errorMessage.textContent = '';
+
+            if (checkName.length < 5) {
+                errorMessage.textContent = "Name of the check must be more than 5 characters.";
+                return;
+            }
+
+            let today = new Date().toISOString().split('T')[0];
+            if (checkDate <= today) {
+                errorMessage.textContent = "The check date must be a future date.";
+                return;
+            }
+
+            if (checkAmount <= 0) {
+                errorMessage.textContent = "Amount must be greater than $0.";
+                return;
+            }
+
+            if (bankName.length < 5) {
+                errorMessage.textContent = "Bank name must be at least 5 characters.";
+                return;
+            }
+
+            if (!/^\d{10}$/.test(accountNumber)) {
+                errorMessage.textContent = "Account number must be exactly 10 digits.";
+                return;
+            }
+    </script>
 
 </body>
 </html>
