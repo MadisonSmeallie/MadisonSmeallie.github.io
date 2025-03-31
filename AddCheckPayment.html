@@ -20,21 +20,25 @@
 
     <div class="form-container">
         <h2>Add Check Payment</h2>
-        <form id="checkPaymentForm">
-            <label for="checkName">Name of the Check:</label>
-            <input type="text" id="checkName" name="checkName" required minlength="5"><br>
+        <form id="checkPaymentForm" class="mb-3">
+            <label for="checkName" class="form-label">Name of the Check:</label>
+            <input type="text" id="checkName" class="form-control" name="checkName" required minlength="5">
+            <div id="checkName" class="form-text">Name of the check must be at least 5 characters</div><br>
 
-            <label for="checkDate">Date (in the future):</label>
-            <input type="date" id="checkDate" name="checkDate" required><br>
+            <label for="checkDate" class="form-label">Date (in the future):</label>
+            <input type="date" id="checkDate" class="form-control" name="checkDate" required>
+            <div id="checkDate" class="form-text">Date must be set in the future</div><br>
 
-            <label for="checkAmount">Amount ($):</label>
-            <input type="number" id="checkAmount" name="checkAmount" required min="0.01"><br>
+            <label for="checkAmount" class="form-label">Amount ($):</label>
+            <input type="number" id="checkAmount" class="form-control" name="checkAmount" required min="0.01">
+            <div id="checkAmount" class="form-text">Amount must be more than zero</div><br>
 
-            <label for="bankName">Bank Name:</label>
-            <input type="text" id="bankName" name="bankName" required minlength="5"><br>
+            <label for="bankName" class="form-label">Bank Name:</label>
+            <input type="text" id="bankName" class="form-control" name="bankName" required minlength="5">
+            <div id="bankName" class="form-text">Bank name must be at least 5 characters long</div><br>
 
-            <label for="accountNumber">Account Number (10 digits):</label>
-            <input type="text" id="accountNumber" name="accountNumber" required pattern="\d{10}" maxlength="10"><br>
+            <label for="accountNumber" class="form-label">Account Number (10 digits):</label>
+            <input type="text" id="accountNumber" class="form-control" name="accountNumber" required pattern="\d{10}" maxlength="10"><br>
 
             <button type="submit">Submit Payment</button>
 
