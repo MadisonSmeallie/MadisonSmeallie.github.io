@@ -18,42 +18,90 @@
 <body>
 <div class="form-container">
     <h2>Add Expense</h2>
-    <form id="expenseForm">
-        <label for="expensePlace">Place of Expense:</label>
-        <input type="text" id="expensePlace" name="expensePlace" required minlength="5">
+    <form id="expenseForm" class="mb-3">
+        <label for="expensePlace" class="form-label">Place of Expense:</label>
+        <input type="text" id="expensePlace" class="form-control" aria-describedby="expensePlace" required minlength="5">
+        <div id="expensePlace" class="form-text">Place of expense is required and a min of length 5</div><br>
 
-        <label for="expenseDate">Expense Date:</label>
-        <input type="date" id="expenseDate" aria-describedby="expenseDate" required>
+        <label for="expenseDate" class="form-label">Expense Date:</label>
+        <input type="date" id="expenseDate" class="form-control" aria-describedby="expenseDate" required><br>
 
         <label for="expenseAmount">Expense Amount ($):</label>
-        <input type="number" id="expenseAmount" aria-describedby="expenseAmount" required min="0" max="50000">
+        <input type="number" id="expenseAmount" class="form-control"  aria-describedby="expenseAmount" required min="0" max="50000">
+        <div id="expenseAmount" class="form-text">Amount should be more than zero but less than 50,000</div><br>
 
-        <p></p>
-
-        <label>Expense Category:</label>
-        <div class="category-labels">
+        <label class="form-label">Expense Category:</label>
+        <div class="category-labels" required>
             <label><input type="checkbox" name="category" value="groceries"> Groceries</label>
             <label><input type="checkbox" name="category" value="business"> Business</label>
             <label><input type="checkbox" name="category" value="restaurants"> Restaurants</label>
             <label><input type="checkbox" name="category" value="fun"> Fun</label>
-        </div>
-
-        <label for="paymentMode">Mode of Payment:</label>
-        <select id="paymentMode" aria-describedby="paymentMode" required>
-            <option value="">Select...</option>
+        </div><br>
+        
+        <label for="paymentMode" class="form-label">Mode of Payment:</label>
+        <select id="paymentMode" class="form-control"aria-describedby="paymentMode" required>
+            <option></option>
             <option value="creditCard">Credit Card</option>
             <option value="debitCard">Debit Card</option>
             <option value="cash">Cash</option>
-        </select>
+        </select><br>
 
-        <label for="rational">Rational (optional, max 100 chars):</label>
-        <textarea id="rational" name="rational" maxlength="100"></textarea>
-
-        <p></p>
+        <label for="rational" class="form-label">Rational (optional, max 100 chars):</label>
+        <textarea id="rational" name="rational" maxlength="100"></textarea><br>
 
         <button type="submit">Submit Expense</button>
 
         <p id="errorMessage" class="error"></p>
     </form>
+
+    <script>
+        document.getElementById("expenseForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let expensePlace = document.getElementById("expensePlace").value;
+            let expenseDate = document.getElementById("expenseDate").value;
+            let expenseAmount = document.getElementById("expenseAmount").value;
+            let paymentMode = document.getElementById("paymentMode").value;
+            let rational = document.getElementById("rational").value;
+            let categories = document.querySelectorAll('input[name="category"]:checked');
+            let errorMessage = document.getElementById("errorMessage");
+
+            errorMessage.textContent = '';
+
+            if (expensePlace.length < 5) {
+                errorMessage.textContent = "Place of expense must be at least 5 characters long.";
+                return;
+            }
+
+            let today = new Date().toISOString().split('T')[0];
+            if (expenseDate > today) {
+                errorMessage.textContent = "Expense date must be before today's date.";
+                return;
+            }
+
+            if (expenseAmount <= 0 || expenseAmount > 50000) {
+                errorMessage.textContent = "Expense amount must be between $1 and $50,000.";
+                return;
+            }
+            if (categories.length === 0) {
+                errorMessage.textContent = "Please select at least one category for the expense.";
+                return;
+            }
+
+            if (paymentMode === "") {
+                errorMessage.textContent = "Please select a mode of payment.";
+                return;
+            }
+
+            console.log("Place of Expense: " + expensePlace);
+            console.log("Expense Date: " + expenseDate);
+            console.log("Expense Amount: $" + expenseAmount);
+            console.log("Categories: " + Array.from(categories).map(cat => cat.value).join(", "));
+            console.log("Mode of Payment: " + paymentMode);
+            console.log("Rational: " + rational);
+        });
+    </script>
+
+
 </body>
 </html>
