@@ -6,7 +6,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <style>
-    
     h2 {
         font-weight: bold;
     }
@@ -22,19 +21,19 @@
     <form id="incomeForm">
         <div class="mb-3">
             <label for="incomeSourceName" class="form-label">Income Source Name:</label>
-            <input type="text" id="incomeSourceName" class="form-control" aria-describedby="incomeSourceName" required>
+            <input type="text" name="incomeSourceName" id="incomeSourceName" class="form-control" aria-describedby="incomeSourceName" required>
             <div id="sourceNameError" class="form-text">Source Name should have a minimum length of 3</div>
         </div>
     
         <div>
             <label for="amount" class="form-label">Amount:</label>
-            <input type="text" id="amount" class="form-control" aria-describedby="amount" required>
+            <input type="text" name="amount" id="amount" class="form-control" aria-describedby="amount" required>
             <div id="amountError" class="form-text">Amount should be more than 0</div>
         </div>
     
         <div>
             <label for="frequency">Frequency:</label>
-            <select id="frequency" aria-describedby="frequency" required>
+            <select name="frequency" id="frequency" aria-describedby="frequency" required>
                 <option></option>
                 <option value="one-time">One-Time</option>
                 <option value="monthly">Monthly</option>
@@ -96,6 +95,22 @@
     }
 
     amountInput.addEventListener("blur", amount);
+    sourceNameInput.addEventListener("blur", amount);
+
+/*     async function statusCheck(URL) {
+        try {
+            const resp = await fetch (URL);
+            if (!resp.ok) {
+                throw new Error(`HTTP error... status: ${resp.status}`);
+            }
+            const data = await resp.json();
+            return {status: 'success', data: data};
+        }
+        catch (error) {
+            return {status: 'error', message: error.message};
+
+            }
+        } */
 
     form.addEventListener("submit", function (e) {
         e.preventDefault(); 
@@ -110,11 +125,18 @@
                 amount: amountInput.value.trim(),
                 frequency: frequencyInput.value,
             };
-            console.log("Form submitted successfully:", formData);
-        } else {
+            let sendUrl = "https://webhook-test.com/c1c0e680531e0d7c7be6f6e6e8caaa4c";
+            let params = new FormData(document.getElementById("incomeForm"));
+            fetch(sendUrl, {method: "POST", body: params})
+            //.then(statusCheck)
+            .then(() => console.log("Form succesesfully submitted."))
+            .catch(error => console.error("Error submitting form:", error))
+            } 
+        else {
             console.log("Please correct the errors before submitting.");
         }
     });
+
 </script>
 
 </html>
