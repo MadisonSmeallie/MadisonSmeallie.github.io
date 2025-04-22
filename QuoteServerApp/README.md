@@ -25,11 +25,34 @@ This app generates a quote based on a specific category the user selects. Additi
 `{
 	quote: "Some quote",
 	author: "Some Author" 
-}` <br>
+}` <br> If successful, it will say so in plain text format. <br>
 - If any required parameter is missing or if the category is not found in the predefined categories array, it responds with: `{ "error": "invalid or insufficient user input" }`
 
 ## Example Responses:
-1. 
+1. GET /quotebook/categories
+- `[
+  "successQuotes",
+  "perseveranceQuotes",
+  "happinessQuotes"
+]`
+
+2. GET /quotebook/quote/successQuotes
+- `{
+  "quote": "The way to get started is to quit talking and begin doing.",
+  "author": "Walt Disney"
+}`
+
+3. POST /quotebook/quote/new
+- `{
+  "category": "successQuotes",
+  "quote": "Believe you can and you're halfway there.",
+  "author": "Theodore Roosevelt"
+}`
+- "Success!" <br>
+Anything else will result in: 
+- `{
+  "error": "invalid or insufficient user input"
+}`
 
 ## Set Up Requirements:
 1. NodeJS - Express
