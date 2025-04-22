@@ -1,0 +1,15 @@
+{
+  "name": "quoteserverapp",
+  "version": "1.0.0",
+  "description": "Generates a quote based on a specified cateogry. Quotes can also be added to the array/list.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Madison Smeallie",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
