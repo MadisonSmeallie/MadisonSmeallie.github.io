@@ -55,6 +55,18 @@ app.get('/quotebook/quote/:category', function (req, res) {
       }
   });
 
+  app.post('/quotebook/quote/new', function (req, res) {
+    const { category, quote, author } = req.body;
+
+  if (!category || !quote || !author || !categories[category]) {
+    return res.status(400).json({ error: "invalid or insufficient user input" });
+  }
+
+  categories[category].push({ quote, author });
+
+  res.send("Success!");
+});
+
 // This is the server listener
 app.listen(8080);
 console.log("Server is running on port 8080");
