@@ -1,5 +1,8 @@
 "use strict"
 
+const express = require('express');
+const app = express();
+
 let categories = ['successQuotes', 'perseveranceQuotes', 'happinessQuotes'];
 
 let successQuotes = [
@@ -35,3 +38,23 @@ let happinessQuotes = [
   }
 ];
 
+// Endpoints
+app.get('/quotebook/categories', function (req, res) {
+    res.type("text").send(req.params.categories);
+  });
+
+app.get('/quotebook/quote/:category', function (req, res) {
+    const category = req.params.category;
+    const selectedCategory = categories[category];
+    if (!selectedCategory) {
+        res.status(404).json({ error: `Category '${category}' not found.` });
+        return;
+      }
+      else {
+        res.type('text').send(req.params.selectedCategory);
+      }
+  });
+
+// This is the server listener
+app.listen(8080);
+console.log("Server is running on port 8080");
